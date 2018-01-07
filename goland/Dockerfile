@@ -8,7 +8,7 @@ LABEL maintainer "Krystan Honour <krystan@gmail.com>"
 #	-v /tmp/.X11-unix:/tmp/.X11-unix \
 #	-e DISPLAY=unix$DISPLAY \
 #	-e GOPATH=/projects/project1
-#	--security-opt seccomp=$HOME/chrome.json \
+#	--security-opt seccomp=$HOME/goland.json \
 #	--device /dev/snd \
 #	--device /dev/dri \
 #	-v /dev/shm:/dev/shm \
