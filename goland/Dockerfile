@@ -21,8 +21,12 @@ LABEL maintainer "Krystan Honour <krystan@gmail.com>"
 
  WORKDIR /opt/goland
 
+ ARG GOLANDVERSION=goland-2017.3
+ ARG GOLANGVERSION=1.9.2
+
  ENV GOROOT=/usr/local/go
  ENV GOPATH=/home/goland/GolandProjects
+ ENV DISPLAY=unix$DISPLAY
 
  RUN apt-get update && apt-get install -y \
 	apt-transport-https \
@@ -38,14 +42,16 @@ LABEL maintainer "Krystan Honour <krystan@gmail.com>"
 	libpulse0 \
 	libv4l-0 \
 	fonts-symbola \
-	--no-install-recommends \
-	&& curl -sSL -O https://download.jetbrains.com/go/goland-2017.3.tar.gz \
+	--no-install-recommends 
+
+RUN curl -sSL -O https://download.jetbrains.com/go/${GOLANDVERSION}.tar.gz \
 	&& mkdir goland \
-	&& tar -xzvf goland-2017.3.tar.gz -C ./goland/ \
-        	--strip-components=1 \
-	&& echo Downloading and Installing golang \
-	&& curl -sSL -O https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz \
-	&& tar -xzvf go1.9.2.linux-amd64.tar.gz \
+	&& tar -xzvf ${GOLANDVERSION}.tar.gz -C ./goland/ \
+        	--strip-components=1
+	
+RUN echo Downloading and Installing golang \
+	&& curl -sSL -O https://storage.googleapis.com/golang/go${GOLANGVERSION}.linux-amd64.tar.gz \
+	&& tar -xzvf go${GOLANGVERSION}.linux-amd64.tar.gz \
 	&& mv go /usr/local \
 	&& rm *.tar.gz \
 	&& apt-get purge --auto-remove -y curl \
