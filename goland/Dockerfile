@@ -60,6 +60,7 @@ RUN echo Downloading and Installing golang \
 
 RUN groupadd -r goland && useradd -r -g goland -G audio,video goland \
     && mkdir -p /home/goland && chown -R goland:goland /home/goland \
+    && chown -R goland:goland /opt/goland \
     && export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 # Run GoLand as non privileged user
