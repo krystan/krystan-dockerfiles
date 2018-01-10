@@ -58,8 +58,10 @@ RUN echo Downloading and Installing golang \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& rm -rf /src/*.deb
 
-RUN groupadd -r goland && useradd -r -g goland -G audio,video goland \
-    && mkdir -p /home/goland && chown -R goland:goland /home/goland \
+RUN groupadd -g 999 goland \
+    && useradd -r -u 999 -g goland -G audio,video goland \
+    && mkdir -p /home/goland \
+    && chown -R goland:goland /home/goland \
     && chown -R goland:goland /opt/goland \
     && export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
@@ -67,4 +69,4 @@ RUN groupadd -r goland && useradd -r -g goland -G audio,video goland \
 USER goland
 
 # Autorun GoLand
-ENTRYPOINT [ "./goland/bin/goland.sh" ]
+CMD [ "./goland/bin/goland.sh" ]
