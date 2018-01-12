@@ -47,7 +47,7 @@ LABEL maintainer "Krystan Honour <krystan@gmail.com>"
 RUN curl -sSL -O https://download.jetbrains.com/go/${GOLANDVERSION}.tar.gz \
 	&& mkdir goland \
 	&& tar -xzvf ${GOLANDVERSION}.tar.gz -C ./goland/ \
-        	--strip-components=1
+		--strip-components=1 \
 	&& curl -sSL -O https://storage.googleapis.com/golang/go${GOLANGVERSION}.linux-amd64.tar.gz \
 	&& tar -xzvf go${GOLANGVERSION}.linux-amd64.tar.gz \
 	&& mv go /usr/local \
