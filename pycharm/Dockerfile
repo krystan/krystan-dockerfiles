@@ -56,7 +56,7 @@ RUN groupadd -g 999 pycharm \
     && chown -R pycharm:pycharm /home/pycharm \
     && chown -R pycharm:pycharm /opt/pycharm 
 
-RUN npm install -g --unsafe-perm  @angular/cli react-cli react
+RUN npm install -g --unsafe-perm  @angular/cli create-react-app react-scripts react-cli react-native-cli react
 
 # Run pycharm as non privileged user
 
