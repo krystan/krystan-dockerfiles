@@ -29,6 +29,8 @@ get seperate tables per client.
 docker run -p 8000:8000 krystan/dynamodb -sharedDb
 ```
 
+## Further reading
+Amazons documentation for dynamodb local is [here](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html)
 ## Motivation
 
 I wanted a container that had dynamodb in it so i could develop if I didn't necessarily have access to aws.
