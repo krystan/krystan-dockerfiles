@@ -33,7 +33,3 @@ I wanted a container that had my favourite website IDE in it so I did not need t
 ## Installation
 
 docker build -t <yourtag> .
-
-## License
-
-A short snippet describing the license (MIT, Apache, etc.)

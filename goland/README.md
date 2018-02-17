@@ -32,7 +32,3 @@ I wanted a container that had my favourite goland IDE in it so I did not need to
 ## Installation
 
 docker build -t <yourtag> .
-
-## License
-
-A short snippet describing the license (MIT, Apache, etc.)
