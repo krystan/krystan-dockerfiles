@@ -1,5 +1,5 @@
 
-FROM openjdk:8u151-jdk-stretch
+FROM openjdk:8u151-jre-slim-stretch
 
 MAINTAINER Krystan Honour <github.com/krystan>
 
@@ -16,7 +16,12 @@ RUN groupadd -g 999 dynamodb \
     && chown -R dynamodb:dynamodb /opt/dynamodb_local \
     && chown -R dynamodb:dynamodb /dynamodb_local_db
 
-RUN wget http://dynamodb-local.s3-website-us-west-2.amazonaws.com/dynamodb_local_latest.tar.gz -q -O - | tar -xz
+RUN apt-get update -y \
+    && apt-get install wget -y \ 
+    && wget http://dynamodb-local.s3-website-us-west-2.amazonaws.com/dynamodb_local_latest.tar.gz -q -O - | tar -xz \
+    && apt-get purge --auto-remove -y wget \
+	&& rm -rf /var/lib/apt/lists/* \
+	&& rm -rf /src/*.deb
   
 VOLUME ["/dynamodb_local_db"]
 
