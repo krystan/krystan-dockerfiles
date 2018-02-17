@@ -27,4 +27,4 @@ USER dynamodb
 
 ENTRYPOINT ["java", "-jar", "DynamoDBLocal.jar"]
 
-CMD ["--sharedDb", "-dbPath", "/dynamodb_local_db", "-port", "8000"]
+CMD ["--sharedDb", "-inMemory", "-port", "8000"]

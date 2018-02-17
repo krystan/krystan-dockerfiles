@@ -2,12 +2,9 @@
 
 A dockerfile which allows you to run DynamoDB locally.
 
-```bash
-docker run -p 8000:8000 krystan/dynamodb
-the dynamo shell is at http://localhost:8000/shell
-```
-
 ## Docker run Examples
+
+NB: the dynamo shell is at http://localhost:8000/shell
 
 To run an ephemeral instance of DynamoDB:
 
