@@ -34,7 +34,7 @@ I wanted a container that had dynamodb in it so i could develop if I didn't nece
 
 ## Installation
 
-docker build -t <yourtag> .
+docker build -t yourtag .
 
 ## Comments
 
