@@ -22,7 +22,7 @@ LABEL maintainer "Krystan Honour <krystan@gmail.com>"
  WORKDIR /opt/goland
 
  ARG GOLANDVERSION=goland-2018.1.1
- ARG GOLANGVERSION=1.9.2
+ ARG GOLANGVERSION=1.10
 
  ENV GOROOT=/usr/local/go
  ENV GOPATH=/home/goland/GolandProjects
