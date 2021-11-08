@@ -1,7 +1,6 @@
 
 FROM openjdk:8u151-jre-slim-stretch
-
-MAINTAINER Krystan Honour <github.com/krystan>
+LABEL maintainer = "krystan@gmail.com"
 
 WORKDIR /opt/dynamodb_local
 
@@ -17,6 +16,7 @@ RUN groupadd -g 999 dynamodb \
     && chown -R dynamodb:dynamodb /dynamodb_local_db
 
 RUN apt-get update -y \
+    && apt-get dist-upgrade -y \
     && apt-get install wget -y \ 
     && wget http://dynamodb-local.s3-website-us-west-2.amazonaws.com/dynamodb_local_latest.tar.gz -q -O - | tar -xz \
     && apt-get purge --auto-remove -y wget \
