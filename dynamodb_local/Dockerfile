@@ -1,5 +1,5 @@
 
-FROM openjdk:8u151-jre-slim-stretch
+FROM openjdk:11
 LABEL maintainer = "krystan@gmail.com"
 
 WORKDIR /opt/dynamodb_local
