@@ -1,0 +1,3 @@
+[submodule "dynamodb-dockerfile"]
+	path = dynamodb-dockerfile
+	url = git@github.com:krystan/dynamodb-dockerfile.git
